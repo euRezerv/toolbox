@@ -24,9 +24,13 @@ describe("isObjectEmpty", () => {
     expect(isObjectEmpty({})).toBe(true);
   });
 
+  it("should return true for objects with no own properties", () => {
+    expect(isObjectEmpty(new Error("Something went wrong"))).toBe(true);
+    expect(isObjectEmpty(new Date())).toBe(true);
+  });
+
   it("should return false for non-empty objects", () => {
     expect(isObjectEmpty({ key: "value" })).toBe(false);
     expect(isObjectEmpty({ key: "value", key2: [1, "2", {}] })).toBe(false);
-    expect(isObjectEmpty(new Error("Something went wrong"))).toBe(false);
   });
 });

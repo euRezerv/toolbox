@@ -3,5 +3,5 @@ export const isObject = (obj: unknown): obj is {} => {
 };
 
 export const isObjectEmpty = (obj: {}) => {
-  return Object.getOwnPropertyNames(obj).length === 0;
+  return Object.keys(obj).length === 0;
 };
