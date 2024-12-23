@@ -1,4 +1,4 @@
-import { isLowercase, isString, isUppercase } from "./strings";
+import { getRandomString, isLowercase, isString, isUppercase } from "./strings";
 
 describe("isString", () => {
   it("should return true for strings", () => {
@@ -47,5 +47,58 @@ describe("isLowercase", () => {
     expect(isLowercase("UPPERCASE")).toBe(false);
     expect(isLowercase("MixedCase")).toBe(false);
     expect(isLowercase("TRUE")).toBe(false);
+  });
+});
+
+describe("getRandomString", () => {
+  it("should return a string of the given length", () => {
+    // act
+    const result = getRandomString(10);
+
+    // assert
+    expect(result).toHaveLength(10);
+  });
+
+  it("should return a string containing all letters and numbers if no characters are provided", () => {
+    // act
+    const result = getRandomString(10);
+
+    // assert
+    expect(result).toMatch(/^[a-zA-Z0-9]{10}$/);
+  });
+
+  it("should return a string containing only the given characters", () => {
+    // act
+    const result = getRandomString(10, "abc");
+
+    // assert
+    expect(result).toMatch(/^[abc]{10}$/);
+  });
+
+  it("should return a string of a random length within the given range", () => {
+    // act
+    const result = getRandomString([5, 10]);
+
+    // assert
+    expect(result.length).toBeGreaterThanOrEqual(5);
+    expect(result.length).toBeLessThanOrEqual(10);
+  });
+
+  it("should return a string containing only the given characters within the given range", () => {
+    // act
+    const result = getRandomString([5, 10], "abc");
+
+    // assert
+    expect(result).toMatch(/^[abc]{5,10}$/);
+    expect(result.length).toBeGreaterThanOrEqual(5);
+    expect(result.length).toBeLessThanOrEqual(10);
+  });
+
+  it("should throw an error if the range array does not contain at least 2 elements", () => {
+    // act
+    const result = () => getRandomString([5]);
+
+    // assert
+    expect(result).toThrow();
   });
 });
