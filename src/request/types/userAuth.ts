@@ -4,8 +4,8 @@ export type LoginRequestType = {
 };
 
 export type RegisterRequestType = {
-  firstName: string;
-  lastName: string;
+  givenName: string;
+  familyName: string;
   email: string;
   phoneNumberCountryISO: string;
   phoneNumber: string;

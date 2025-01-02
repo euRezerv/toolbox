@@ -1,13 +1,16 @@
+import { AllOrNothing } from "src/common/typescript";
 import { StandardResponseType } from "./types";
 
 export type LoginResponseType = StandardResponseType<{
   user: {
     id: string;
+    isProfileComplete: boolean;
+  } & AllOrNothing<{
     email: string;
     phoneNumber: string;
-    firstName: string;
-    lastName: string;
-  };
+    givenName: string;
+    familyName: string;
+  }>;
 }>;
 
 export type RegisterResponseType = StandardResponseType<{
@@ -15,8 +18,8 @@ export type RegisterResponseType = StandardResponseType<{
     id: string;
     email: string;
     phoneNumber: string;
-    firstName: string;
-    lastName: string;
+    givenName: string;
+    familyName: string;
     createdAt: string;
   };
 }>;
