@@ -1,12 +1,8 @@
 export type GetUserByIdRequestType = {
-  id: string;
+  params: { id: string };
 };
 
-export type CreateOrUpdateUserLocalProfileRequestType = {
-  userId?: string;
-  givenName: string;
-  familyName: string;
-  email: string;
-  phoneNumberCountryISO: string;
-  phoneNumber: string;
+export type CreateOrReplaceUserLocalProfileRequestType = {
+  params: { userId?: string };
+  body: { givenName: string; familyName: string; email: string; phoneNumberCountryISO: string; phoneNumber: string };
 };

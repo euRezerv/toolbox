@@ -1,7 +1,7 @@
 import { AllOrNothing } from "src/common/typescript";
 import { StandardResponseType } from "./types";
 
-export type GetAuthUserResponseType = StandardResponseType<{
+export type GetCurrentUserResponseType = StandardResponseType<{
   user: {
     id: string;
     isProfileComplete: boolean;
@@ -33,4 +33,8 @@ export type GetUserByIdResponseType = StandardResponseType<{
     isPhoneVerified: boolean;
     isSystemAdmin: boolean;
   }>;
+}>;
+
+export type CreateOrReplaceUserLocalProfileResponseType = StandardResponseType<{
+  localProfile: { modifiedUserId: string; givenName: string; familyName: string; email: string; phoneNumber: string };
 }>;
