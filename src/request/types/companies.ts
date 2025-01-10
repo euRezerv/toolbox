@@ -1,7 +1,7 @@
 import { CompanyEmployeeRole } from "@prisma/client";
 
 export type GetCompanyByIdRequestType = {
-  params: { id: string };
+  path: { id: string };
 };
 
 export type GetCompaniesRequestType = {

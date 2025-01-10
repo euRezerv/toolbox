@@ -1,8 +1,8 @@
 export type GetUserByIdRequestType = {
-  params: { id: string };
+  path: { id: string };
 };
 
 export type CreateOrReplaceUserLocalProfileRequestType = {
-  params: { userId?: string };
+  query: { userId?: string };
   body: { givenName: string; familyName: string; email: string; phoneNumberCountryISO: string; phoneNumber: string };
 };
