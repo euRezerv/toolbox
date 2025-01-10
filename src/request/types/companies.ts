@@ -23,3 +23,8 @@ export type CreateCompanyRequestType = {
     longitude: number;
   };
 };
+
+export type InviteEmployeeToCompanyRequestType = {
+  path: { id: string };
+  body: { invitedUserId: string; role: CompanyEmployeeRole };
+};

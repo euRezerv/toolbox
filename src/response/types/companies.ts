@@ -49,3 +49,15 @@ export type CreateCompanyResponseType = StandardResponseType<{
     createdAt: string;
   };
 }>;
+
+export type InviteEmployeeToCompanyResponseType = StandardResponseType<{
+  invitation: {
+    id: string;
+    senderCompanyEmployeeId: string;
+    invitedUserId: string;
+    role: string;
+    status: string;
+    expiresIn: string;
+    expiresAt: string;
+  };
+}>;
