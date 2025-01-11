@@ -1,7 +1,7 @@
 import { CompanyEmployeeRole } from "@prisma/client";
 
 export type GetCompanyByIdRequestType = {
-  path: { id: string };
+  path: { companyId: string };
 };
 
 export type GetCompaniesRequestType = {
@@ -25,6 +25,6 @@ export type CreateCompanyRequestType = {
 };
 
 export type InviteEmployeeToCompanyRequestType = {
-  path: { id: string };
+  path: { companyId: string };
   body: { invitedUserId: string; role: CompanyEmployeeRole };
 };
