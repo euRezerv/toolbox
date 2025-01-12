@@ -1,4 +1,4 @@
-import { PaginationResponseType, StandardResponseType } from "./types";
+import { PaginationResponseType, StandardResponseType } from "../types";
 
 export type GetCompaniesResponseType = StandardResponseType<
   {
@@ -47,17 +47,5 @@ export type CreateCompanyResponseType = StandardResponseType<{
     longitude: number;
     createdById: string;
     createdAt: string;
-  };
-}>;
-
-export type InviteEmployeeToCompanyResponseType = StandardResponseType<{
-  invitation: {
-    id: string;
-    senderCompanyEmployeeId: string;
-    invitedUserId: string;
-    role: string;
-    status: string;
-    expiresIn: string;
-    expiresAt: string;
   };
 }>;
