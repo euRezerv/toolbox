@@ -28,3 +28,14 @@ export type AcceptEmployeeToCompanyInvitationResponseType = StandardResponseType
     role: string;
   };
 }>;
+
+export type DeclineEmployeeToCompanyInvitationResponseType = StandardResponseType<{
+  invitation: {
+    id: string;
+    senderCompanyEmployeeId: string;
+    invitedUserId: string;
+    role: string;
+    status: string;
+    expiresAt: string;
+  };
+}>;
