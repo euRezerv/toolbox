@@ -12,3 +12,7 @@ export type AcceptEmployeeToCompanyInvitationRequestType = {
 export type DeclineEmployeeToCompanyInvitationRequestType = {
   path: { companyId: string; invitationId: string };
 };
+
+export type CancelEmployeeToCompanyInvitationRequestType = {
+  path: { companyId: string; invitationId: string };
+};
